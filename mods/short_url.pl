@@ -8,6 +8,6 @@ use WWW::Shorten 'TinyURL';
 my $message = join(' ', @ARGV);
 my ($url) = $message =~ /$RE{URI}{-keep}/;
 if ($url) {
-    my $short_url = makeashorterlink ('http://www.Google.com');
+    my $short_url = makeashorterlink($url);
     print $short_url;
 }
