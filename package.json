@@ -1,0 +1,19 @@
+{
+    "name": "bot.py",
+    "version": "1.0.0",
+    "description": "irc bot that lets you write command scripts in any language",
+    "main": "bot.py",
+    "dependencies": {
+    "short-url": "0.0.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+    "type": "git",
+    "url": "snaek:repos/bot.py"
+    },
+    "author": "chee <chee@snaek.org> (https://snaek.org/)",
+    "license": "GPL-3.0"
+}
