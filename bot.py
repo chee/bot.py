@@ -24,9 +24,9 @@ class Petal(irc.bot.SingleServerIRCBot):
         for mod in os.listdir('mods'):
             try:
                 result = subprocess.check_output(['mods/' + mod, msg])
+                self.connection.privmsg(config('channel'), result.decode().strip())
             except subprocess.CalledProcessError:
                 print("subprocess failed")
-            self.connection.privmsg(config('channel'), result.decode().strip())
 
 
 def main():
