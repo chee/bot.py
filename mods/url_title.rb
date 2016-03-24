@@ -5,5 +5,5 @@ require 'uri'
 message = ARGV.join(' ')
 url = URI.extract(message)[0]
 if url
-    puts "#{Mechanize.new.get(url).title} [#{url}]"
+    puts "Title: #{Mechanize.new.get(url).title} [#{url}]"
 end
