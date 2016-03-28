@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 import irc.bot
 import os
 import subprocess
