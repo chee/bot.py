@@ -22,6 +22,10 @@ class Petal(irc.bot.SingleServerIRCBot):
         self.message(e, e.arguments[0])
 
     def message(self, e, msg):
+        user = e.source.split('!')[0]
+        ignore = config('ignore').split(' ')
+        if (user in ignore):
+            return
         for mod in os.listdir('mods'):
             try:
                 result = subprocess.check_output(['mods/' + mod, msg])
