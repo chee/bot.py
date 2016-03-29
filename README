@@ -7,3 +7,5 @@ here are three great things about using these separate scripts for bot commands:
 the bad thing is that the more commands you add the slower the bot is
 because it has to run every line through every script
 because it's the script that decides what lines of chat are interesting to it
+
+the other bad thing is that there is no central way of listing or managing deps
