@@ -7,7 +7,7 @@ use WWW::Shorten 'TinyURL';
 
 my $message = join(' ', @ARGV);
 my ($url) = $message =~ /$RE{URI}{-keep}/;
-if ($url) {
+if ($url && length($url) >= 40) {
     my $short_url = makeashorterlink($url);
     print $short_url;
 }
