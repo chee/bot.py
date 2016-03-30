@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-var process = require('process')
 message = process.argv.splice(2).join(' ')
 
 if (message.indexOf('&echo') == 0) {
