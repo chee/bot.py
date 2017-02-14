@@ -31,8 +31,9 @@ class Petal(irc.bot.SingleServerIRCBot):
                 result = subprocess.check_output(['mods/' + mod, msg])
                 self.connection.privmsg(config('channel'), result.decode().strip())
             except subprocess.CalledProcessError:
-                print("subprocess failed")
-
+                print('subprocess failed')
+            except PermissionError:
+                print('couldnt execute ' + mod)
 
 def main():
     bot = Petal(config('channel'), config('name'), config('server'), config('port'))
