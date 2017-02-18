@@ -1,0 +1,8 @@
+# you are a danger to yourself and humanity
+root = true
+
+[*]
+end_of_line = lf
+indent_style = tabs
+insert_final_newline = true
+trim_trailing_whitespace = true
