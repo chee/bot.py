@@ -12,17 +12,17 @@ class Petal(irc.bot.SingleServerIRCBot):
         irc.bot.SingleServerIRCBot.__init__(self, [(server, int(port))], name, name)
         self.channel = channel
 
-    def on_welcome(self, c, e):
-        c.join(self.channel)
+    def on_welcome(self, connection, _):
+        connection.join(self.channel)
 
-    def on_privmsg(self, c, e):
-        self.message(e, e.arguments[0])
+    def on_privmsg(self, _, event):
+        self.message(event, event.arguments[0])
 
-    def on_pubmsg(self, c, e):
-        self.message(e, e.arguments[0])
+    def on_pubmsg(self, _, event):
+        self.message(event, event.arguments[0])
 
-    def message(self, e, msg):
-        user = e.source.split('!')[0]
+    def message(self, event, msg):
+        user = event.source.split('!')[0]
         ignore = config('ignore').split(' ')
         if (user in ignore):
             return
